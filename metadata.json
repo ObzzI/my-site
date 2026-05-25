@@ -1,0 +1,6 @@
+{
+  "name": "ToonHub Protein & Nutrition",
+  "description": "Premium Protein Powder Showcase featuring Chocolate, Unflavored, and Cookie flavor formulations in a modern carousel slide layout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
