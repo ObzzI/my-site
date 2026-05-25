@@ -1051,22 +1051,22 @@ export default function App() {
           {/* Interactive Dynamic Cylindrical Carousel in a 3D overlay stack */}
           <div className="relative w-full h-[510px] sm:h-[550px] md:h-[590px] overflow-visible">
 
-            <div className="w-full h-full relative flex items-center justify-center animate-fade-in" style={{ transformStyle: 'preserve-3d', perspective: 1200, zIndex: 10 }}>
+            <div className="w-full h-full relative flex items-center justify-center animate-fade-in" style={{ perspective: 1200, zIndex: 10 }}>
                 {ALT_PRODUCTS.map((product, index) => {
                   const isFocused = index === altIndex;
                   
                   // Circular shortest distance difference for 8 elements
                   let diff = index - altIndex;
                   if (diff > 4) diff -= 8;
-                  if (diff < -4) diff += 8;
+                  if (diff < -3) diff += 8;
 
                   const getCardTransforms = (d: number) => {
                     if (isMobile) {
                       switch (d) {
                         case 0: // Center
                           return {
-                            x: 'calc(-50% + 0px)',
-                            y: 'calc(-50% + 0px)',
+                            x: 0,
+                            y: 0,
                             rotateY: 0,
                             scale: 1,
                             opacity: 1,
@@ -1075,8 +1075,8 @@ export default function App() {
                           };
                         case -1: // Immediate Left
                           return {
-                            x: 'calc(-50% - 190px)',
-                            y: 'calc(-50% + 20px)',
+                            x: -190,
+                            y: 20,
                             rotateY: 18,
                             scale: 0.76,
                             opacity: 0.55,
@@ -1085,8 +1085,8 @@ export default function App() {
                           };
                         case 1: // Immediate Right
                           return {
-                            x: 'calc(-50% + 190px)',
-                            y: 'calc(-50% + 20px)',
+                            x: 190,
+                            y: 20,
                             rotateY: -18,
                             scale: 0.76,
                             opacity: 0.55,
@@ -1095,8 +1095,8 @@ export default function App() {
                           };
                         case -2: // Far Left
                           return {
-                            x: 'calc(-50% - 320px)',
-                            y: 'calc(-50% + 50px)',
+                            x: -320,
+                            y: 50,
                             rotateY: 30,
                             scale: 0.55,
                             opacity: 0,
@@ -1105,8 +1105,8 @@ export default function App() {
                           };
                         case 2: // Far Right
                           return {
-                            x: 'calc(-50% + 320px)',
-                            y: 'calc(-50% + 50px)',
+                            x: 320,
+                            y: 50,
                             rotateY: -30,
                             scale: 0.55,
                             opacity: 0,
@@ -1115,8 +1115,8 @@ export default function App() {
                           };
                         default:
                           return {
-                            x: d < 0 ? 'calc(-50% - 400px)' : 'calc(-50% + 400px)',
-                            y: 'calc(-50% + 60px)',
+                            x: d < 0 ? -400 : 400,
+                            y: 60,
                             rotateY: d < 0 ? 45 : -45,
                             scale: 0.45,
                             opacity: 0,
@@ -1128,8 +1128,8 @@ export default function App() {
                       switch (d) {
                         case 0: // Center
                           return {
-                            x: 'calc(-50% + 0px)',
-                            y: 'calc(-50% + 0px)',
+                            x: 0,
+                            y: 0,
                             rotateY: 0,
                             scale: 1.02,
                             opacity: 1,
@@ -1138,8 +1138,8 @@ export default function App() {
                           };
                         case -1: // Immediate Left
                           return {
-                            x: 'calc(-50% - 250px)',
-                            y: 'calc(-50% + 20px)',
+                            x: -250,
+                            y: 20,
                             rotateY: 22,
                             scale: 0.76,
                             opacity: 0.65,
@@ -1148,8 +1148,8 @@ export default function App() {
                           };
                         case 1: // Immediate Right
                           return {
-                            x: 'calc(-50% + 250px)',
-                            y: 'calc(-50% + 20px)',
+                            x: 250,
+                            y: 20,
                             rotateY: -22,
                             scale: 0.76,
                             opacity: 0.65,
@@ -1158,8 +1158,8 @@ export default function App() {
                           };
                         case -2: // Far Left
                           return {
-                            x: 'calc(-50% - 460px)',
-                            y: 'calc(-50% + 50px)',
+                            x: -460,
+                            y: 50,
                             rotateY: 38,
                             scale: 0.52,
                             opacity: 0.15,
@@ -1168,8 +1168,8 @@ export default function App() {
                           };
                         case 2: // Far Right
                           return {
-                            x: 'calc(-50% + 460px)',
-                            y: 'calc(-50% + 50px)',
+                            x: 460,
+                            y: 50,
                             rotateY: -38,
                             scale: 0.52,
                             opacity: 0.15,
@@ -1178,8 +1178,8 @@ export default function App() {
                           };
                         default:
                           return {
-                            x: d < 0 ? 'calc(-50% - 650px)' : 'calc(-50% + 650px)',
-                            y: 'calc(-50% + 80px)',
+                            x: d < 0 ? -650 : 650,
+                            y: 80,
                             rotateY: d < 0 ? 45 : -45,
                             scale: 0.45,
                             opacity: 0,
@@ -1192,8 +1192,8 @@ export default function App() {
                       switch (d) {
                         case 0: // Center
                           return {
-                            x: 'calc(-50% + 0px)',
-                            y: 'calc(-50% + 0px)',
+                            x: 0,
+                            y: 0,
                             rotateY: 0,
                             scale: 1.05,
                             opacity: 1,
@@ -1202,8 +1202,8 @@ export default function App() {
                           };
                         case -1: // Immediate Left
                           return {
-                            x: 'calc(-50% - 320px)',
-                            y: 'calc(-50% + 30px)',
+                            x: -320,
+                            y: 30,
                             rotateY: 24,
                             scale: 0.75,
                             opacity: 0.72,
@@ -1212,8 +1212,8 @@ export default function App() {
                           };
                         case 1: // Immediate Right
                           return {
-                            x: 'calc(-50% + 320px)',
-                            y: 'calc(-50% + 30px)',
+                            x: 320,
+                            y: 30,
                             rotateY: -24,
                             scale: 0.75,
                             opacity: 0.72,
@@ -1222,8 +1222,8 @@ export default function App() {
                           };
                         case -2: // Far Left
                           return {
-                            x: 'calc(-50% - 560px)',
-                            y: 'calc(-50% + 75px)',
+                            x: -560,
+                            y: 75,
                             rotateY: 42,
                             scale: 0.52,
                             opacity: 0.24,
@@ -1232,8 +1232,8 @@ export default function App() {
                           };
                         case 2: // Far Right
                           return {
-                            x: 'calc(-50% + 560px)',
-                            y: 'calc(-50% + 75px)',
+                            x: 560,
+                            y: 75,
                             rotateY: -42,
                             scale: 0.52,
                             opacity: 0.24,
@@ -1242,8 +1242,8 @@ export default function App() {
                           };
                         default:
                           return {
-                            x: d < 0 ? 'calc(-50% - 800px)' : 'calc(-50% + 800px)',
-                            y: 'calc(-50% + 100px)',
+                            x: d < 0 ? -800 : 800,
+                            y: 100,
                             rotateY: d < 0 ? 55 : -55,
                             scale: 0.45,
                             opacity: 0,
@@ -1267,123 +1267,130 @@ export default function App() {
                   };
 
                   return (
-                    <motion.div
+                    <div
                       key={product.id}
-                      onClick={() => setAltIndex(index)}
-                      animate={{
-                        x: transforms.x,
-                        y: transforms.y,
-                        rotateY: transforms.rotateY,
-                        scale: transforms.scale,
-                        opacity: transforms.opacity,
-                        zIndex: transforms.zIndex,
-                        filter: isFocused ? 'none' : 'blur(2px) grayscale(30%)',
-                      }}
-                      transition={{
-                        type: 'spring',
-                        damping: 26,
-                        stiffness: 140,
-                      }}
                       style={{
                         position: 'absolute',
                         left: '50%',
                         top: '50%',
+                        transform: 'translate(-50%, -50%)',
                         transformStyle: 'preserve-3d',
-                        boxShadow: isFocused ? `0 20px 50px ${product.color}20` : '0 10px 30px rgba(0,0,0,0.5)',
+                        zIndex: transforms.zIndex,
                         pointerEvents: transforms.pointerEvents,
-                        transition: 'box-shadow 300ms, background-color 300ms, border-color 300ms',
                       }}
-                      className={`shrink-0 w-[280px] sm:w-[310px] md:w-[350px] border rounded-[28px] p-5 sm:p-7 md:p-8 flex flex-col justify-between group select-none cursor-pointer overflow-hidden ${
-                        isFocused 
-                          ? 'border-white/15 bg-[#121212]' 
-                          : 'border-white/[0.06] bg-[#0c0c0c]'
-                      }`}
                     >
-                      {/* Dynamic focused glow halo */}
-                      <div 
-                        className="absolute -inset-0.5 rounded-[30px] opacity-100 transition-opacity duration-300 blur-xl -z-10 pointer-events-none"
-                        style={{
-                          background: isFocused 
-                            ? `linear-gradient(135deg, ${product.color}25, transparent 70%)`
-                            : 'transparent'
+                      <motion.div
+                        onClick={() => setAltIndex(index)}
+                        animate={{
+                          x: transforms.x,
+                          y: transforms.y,
+                          rotateY: transforms.rotateY,
+                          scale: transforms.scale,
+                          opacity: transforms.opacity,
+                          filter: isFocused ? 'none' : 'blur(2px) grayscale(30%)',
                         }}
-                      />
+                        transition={{
+                          type: 'spring',
+                          damping: 30,
+                          stiffness: 110,
+                          mass: 0.9,
+                        }}
+                        style={{
+                          boxShadow: isFocused ? `0 20px 50px ${product.color}20` : '0 10px 30px rgba(0,0,0,0.5)',
+                          transition: 'box-shadow 300ms, background-color 300ms, border-color 300ms',
+                        }}
+                        className={`shrink-0 w-[280px] sm:w-[310px] md:w-[350px] border rounded-[28px] p-5 sm:p-7 md:p-8 flex flex-col justify-between group select-none cursor-pointer overflow-hidden ${
+                          isFocused 
+                            ? 'border-white/15 bg-[#121212]' 
+                            : 'border-white/[0.06] bg-[#0c0c0c]'
+                        }`}
+                      >
+                        {/* Dynamic focused glow halo */}
+                        <div 
+                          className="absolute -inset-0.5 rounded-[30px] opacity-100 transition-opacity duration-300 blur-xl -z-10 pointer-events-none"
+                          style={{
+                            background: isFocused 
+                              ? `linear-gradient(135deg, ${product.color}25, transparent 70%)`
+                              : 'transparent'
+                          }}
+                        />
 
-                      <div>
-                        {/* Header capsule & custom serif index number */}
-                        <div className="flex justify-between items-center w-full mb-8">
-                          <div 
-                            className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.03]"
-                            style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.03)' }}
-                          >
-                            {getIconComponent(product.iconName, product.color)}
-                            <span className="text-[9px] font-black tracking-widest font-mono text-zinc-400 uppercase">
-                              {product.tag}
-                            </span>
-                          </div>
-                          <span className="font-serif text-[26px] font-black italic text-zinc-600 italic">
-                            {product.num}
-                          </span>
-                        </div>
-
-                        {/* Title & premium text body */}
-                        <div className="flex flex-col gap-2.5">
-                          <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight uppercase leading-tight">
-                            {product.title}
-                          </h3>
-                          <p className="text-[12px] text-zinc-400 font-medium leading-relaxed normal-case">
-                            {product.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Technical Specs at bottom */}
-                      <div className="flex flex-col gap-4 mt-8 w-full">
-                        <div className="flex items-center gap-4 text-[10px] font-mono font-bold text-zinc-400">
-                          <div className="flex flex-col">
-                            <span className="text-[8px] text-zinc-500 uppercase tracking-wider">Formula / serving</span>
-                            <span className="text-white font-extrabold mt-0.5">{product.spec1}</span>
-                          </div>
-                          <div className="w-[1px] h-5 bg-white/10" />
-                          <div className="flex flex-col">
-                            <span className="text-[8px] text-zinc-500 uppercase tracking-wider">Servings count</span>
-                            <span className="text-white font-extrabold mt-0.5">{product.spec2}</span>
-                          </div>
-                        </div>
-
-                        {/* Price & Action button */}
-                        <div className="flex justify-between items-center w-full pt-4 border-t border-white/[0.06] mt-1">
-                          <div className="flex flex-col">
-                            <span className="text-[8px] text-zinc-500 font-mono font-semibold uppercase tracking-wider">Price</span>
-                            <span className="text-lg font-black font-mono leading-none mt-1" style={{ color: product.color }}>
-                              {product.price}
+                        <div>
+                          {/* Header capsule & custom serif index number */}
+                          <div className="flex justify-between items-center w-full mb-8">
+                            <div 
+                              className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/5 bg-white/[0.03]"
+                              style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.03)' }}
+                            >
+                              {getIconComponent(product.iconName, product.color)}
+                              <span className="text-[9px] font-black tracking-widest font-mono text-zinc-400 uppercase">
+                                {product.tag}
+                              </span>
+                            </div>
+                            <span className="font-serif text-[26px] font-black italic text-zinc-600 italic">
+                              {product.num}
                             </span>
                           </div>
 
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (!isFocused) return;
-                              triggerOrder(product.title);
-                            }}
-                            disabled={!isFocused}
-                            className={`flex items-center justify-center px-4.5 py-2 border text-white font-extrabold tracking-widest uppercase text-[9px] rounded-xl active:scale-95 transition-all duration-300 ${
-                              isFocused 
-                                ? 'border-white/10 bg-white/[0.05] hover:bg-white/[0.12] cursor-pointer' 
-                                : 'border-white/[0.03] bg-white/[0.02] opacity-30 cursor-default pointer-events-none'
-                            }`}
-                            style={{
-                              boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 8px 18px rgba(0,0,0,0.5)',
-                              backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0.07), rgba(255,255,255,0.01))'
-                            }}
-                          >
-                            Pre-Order
-                            <ArrowRight className="w-3.5 h-3.5 ml-1.5" strokeWidth={2.5} />
-                          </button>
+                          {/* Title & premium text body */}
+                          <div className="flex flex-col gap-2.5">
+                            <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight uppercase leading-tight">
+                              {product.title}
+                            </h3>
+                            <p className="text-[12px] text-zinc-400 font-medium leading-relaxed normal-case">
+                              {product.description}
+                            </p>
+                          </div>
                         </div>
-                      </div>
 
-                    </motion.div>
+                        {/* Technical Specs at bottom */}
+                        <div className="flex flex-col gap-4 mt-8 w-full">
+                          <div className="flex items-center gap-4 text-[10px] font-mono font-bold text-zinc-400">
+                            <div className="flex flex-col">
+                              <span className="text-[8px] text-zinc-500 uppercase tracking-wider">Formula / serving</span>
+                              <span className="text-white font-extrabold mt-0.5">{product.spec1}</span>
+                            </div>
+                            <div className="w-[1px] h-5 bg-white/10" />
+                            <div className="flex flex-col">
+                              <span className="text-[8px] text-zinc-500 uppercase tracking-wider">Servings count</span>
+                              <span className="text-white font-extrabold mt-0.5">{product.spec2}</span>
+                            </div>
+                          </div>
+
+                          {/* Price & Action button */}
+                          <div className="flex justify-between items-center w-full pt-4 border-t border-white/[0.06] mt-1">
+                            <div className="flex flex-col">
+                              <span className="text-[8px] text-zinc-500 font-mono font-semibold uppercase tracking-wider">Price</span>
+                              <span className="text-lg font-black font-mono leading-none mt-1" style={{ color: product.color }}>
+                                {product.price}
+                              </span>
+                            </div>
+
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (!isFocused) return;
+                                triggerOrder(product.title);
+                              }}
+                              disabled={!isFocused}
+                              className={`flex items-center justify-center px-4.5 py-2 border text-white font-extrabold tracking-widest uppercase text-[9px] rounded-xl active:scale-95 transition-all duration-300 ${
+                                isFocused 
+                                  ? 'border-white/10 bg-white/[0.05] hover:bg-white/[0.12] cursor-pointer' 
+                                  : 'border-white/[0.03] bg-white/[0.02] opacity-30 cursor-default pointer-events-none'
+                              }`}
+                              style={{
+                                boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 8px 18px rgba(0,0,0,0.5)',
+                                backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0.07), rgba(255,255,255,0.01))'
+                              }}
+                            >
+                              Pre-Order
+                              <ArrowRight className="w-3.5 h-3.5 ml-1.5" strokeWidth={2.5} />
+                            </button>
+                          </div>
+                        </div>
+
+                      </motion.div>
+                    </div>
                   );
                 })}
             </div>
@@ -1626,7 +1633,7 @@ export default function App() {
               </h5>
               <ul className="flex flex-col gap-2 text-zinc-400 text-xs font-mono">
                 <li><a href="#" className="hover:text-white transition-colors">Submit Query</a></li>
-                <li><span className="text-zinc-500 font-bold">+353 (0) 1 2630363</span></li>
+                <li><span className="text-zinc-500 font-bold">+1 (800) 555-0199</span></li>
               </ul>
             </div>
 
@@ -1635,8 +1642,8 @@ export default function App() {
           {/* Region Picker Selector Row */}
           <div className="border-t border-white/[0.03] pt-6 flex flex-col gap-6">
             <div className="flex items-center gap-2 text-zinc-300 text-xs font-mono select-none cursor-pointer hover:text-white w-fit transition-colors">
-              <span className="inline-block w-4 text-[13px] leading-none">🇮🇪</span>
-              <span className="tracking-wider uppercase font-bold text-[10px]">IRELAND (EUR €)</span>
+              <span className="inline-block w-4 text-[13px] leading-none">🇺🇸</span>
+              <span className="tracking-wider uppercase font-bold text-[10px]">USA (USD $)</span>
               <span className="text-zinc-500 text-[9px]">▼</span>
             </div>
           </div>
